@@ -1,5 +1,7 @@
 # SkillSwap : Verified Peer-to-Peer Skill Exchange
 
+LINK - https://skillswapsr.netlify.app/
+
 MERN + Socket.io implementation of the SkillSwap PRD: a peer learning platform where mentors must pass a verification exam before teaching, sessions run in real-time chat, and an AI-style moderator keeps conversations on-topic.
 
 ```

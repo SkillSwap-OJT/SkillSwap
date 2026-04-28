@@ -98,4 +98,3 @@ Vite proxies `/api` and `/socket.io` to `http://localhost:5000`, so just run bot
 ## Stack
 - **Backend**: Express, Mongoose, Socket.io, JWT, bcryptjs, helmet, morgan, express-rate-limit
 - **Frontend**: React 19, React Router 7, Vite 7, Tailwind 4, axios, socket.io-client
-# SkillSwapRS

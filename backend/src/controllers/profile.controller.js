@@ -20,6 +20,8 @@ export const updateMyProfile = asyncHandler(async (req, res) => {
   if (typeof avatarUrl === 'string') user.avatarUrl = avatarUrl;
   if (intent && ['learner', 'teacher', 'both'].includes(intent)) user.intent = intent;
   await user.save();
+  await user.populate('skillsOffered.skill');
+  await user.populate('skillsWanted.skill');
   res.json({ user: user.toPublicJSON() });
 });
 

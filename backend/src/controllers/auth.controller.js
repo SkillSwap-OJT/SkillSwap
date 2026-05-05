@@ -28,7 +28,10 @@ export const login = asyncHandler(async (req, res) => {
   const { email, password } = req.body || {};
   if (!email || !password) throw badRequest('email and password are required');
 
-  const user = await User.findOne({ email: email.toLowerCase() }).select('+passwordHash');
+  const user = await User.findOne({ email: email.toLowerCase() })
+    .select('+passwordHash')
+    .populate('skillsOffered.skill')
+    .populate('skillsWanted.skill');
   if (!user) throw unauthorized('Invalid credentials');
 
   const ok = await user.comparePassword(password);

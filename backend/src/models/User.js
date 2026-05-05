@@ -39,20 +39,21 @@ userSchema.statics.hashPassword = function (plain) {
 };
 
 userSchema.methods.toPublicJSON = function () {
+  const obj = this.toObject();
   return {
-    id: this._id.toString(),
-    name: this.name,
-    email: this.email,
-    bio: this.bio,
-    avatarUrl: this.avatarUrl,
-    college: this.college,
-    intent: this.intent,
-    skillsOffered: this.skillsOffered,
-    skillsWanted: this.skillsWanted,
-    onboarded: this.onboarded,
-    averageRating: this.averageRating,
-    ratingsCount: this.ratingsCount,
-    createdAt: this.createdAt,
+    id: obj._id.toString(),
+    name: obj.name,
+    email: obj.email,
+    bio: obj.bio,
+    avatarUrl: obj.avatarUrl,
+    college: obj.college,
+    intent: obj.intent,
+    skillsOffered: obj.skillsOffered,
+    skillsWanted: obj.skillsWanted,
+    onboarded: obj.onboarded,
+    averageRating: obj.averageRating,
+    ratingsCount: obj.ratingsCount,
+    createdAt: obj.createdAt,
   };
 };
 
